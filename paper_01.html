@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paper 1 — Digital Innovation in Accounting · BulAIS 2024</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="cyr-band"></div>
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="crest">БАИС</div>
+      <div>
+        <h1 class="site-title">BulAIS 2024 Workshop</h1>
+        <div class="site-subtitle">on Information Systems &amp; Digital Innovation</div>
+      </div>
+    </div>
+    <span class="location-tag">25–26 October 2024 · Sofia, Bulgaria</span>
+  </div>
+</header>
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="cfp.html">Call for Papers</a></li>
+    <li><a href="committee.html">Committee</a></li>
+    <li><a href="schedule.html">Programme</a></li>
+    <li><a href="venue.html">Venue</a></li>
+    <li><a href="proceedings.html" class="active">Proceedings</a></li>
+  </ul>
+</nav>
+
+<main>
+  <p style="font-family:'Old Standard TT',serif;text-transform:uppercase;letter-spacing:2px;font-size:12px;color:#9f813d;">Paper 1 of 6 · Session 1: Financial &amp; Accounting IS</p>
+  <h1 style="font-family:'Cormorant Garamond',serif;color:#4a1d23;font-size:34px;line-height:1.2;margin:6px 0 4px;">Digital Innovation in Accounting: A Cybersecurity Perspective on Financial Information Systems</h1>
+  <p style="font-style:italic;color:#5a3a37;margin:0 0 22px;">Jiu Xiaoxiao · Independent researcher (Sofia, Bulgaria / Beijing, China)</p>
+
+  <dl class="paper-meta">
+    <dt>Author</dt>
+    <dd>Jiu Xiaoxiao &mdash; corresponding author; jiuxiaoxiao [at] proton.me</dd>
+    <dt>Affiliation</dt>
+    <dd>Independent researcher in residence at Sofia, Bulgaria; previously Senior Internal Auditor, financial-services sector, People's Republic of China.</dd>
+    <dt>Track</dt>
+    <dd>Full research paper, double-blind reviewed (3 reviewers)</dd>
+    <dt>Keywords</dt>
+    <dd>accounting information systems · cybersecurity · digital innovation · financial reporting · NIS2 · internal controls · trustworthy AI</dd>
+    <dt>Pages in volume</dt>
+    <dd>pp. 1–14</dd>
+  </dl>
+
+  <h2 class="section-title">Abstract</h2>
+  <p class="abstract">This paper examines the under-theorised intersection of digital innovation and cybersecurity in contemporary accounting information systems (AIS). While the accounting literature has documented the productivity, transparency and reporting-quality gains of cloud accounting, robotic process automation and generative-AI assistants, the cybersecurity literature has separately catalogued the threat surfaces these technologies introduce: token-theft attacks on cloud-accounting tenants, prompt-injection compromises of AI bookkeeping assistants, supply-chain attacks against ERP plug-ins, and the systemic risk of consolidated audit-data lakes. We argue that these two literatures must be read together. Drawing on a structured review of 142 papers (2018–2024) and on interview material with 22 internal-audit professionals across Bulgaria, Serbia, Romania and the People's Republic of China, we develop a three-layer analytical framework — innovation surface, control surface, threat surface — that allows AIS designers and auditors to reason about cyber risk as an inherent property of digital-accounting innovation rather than as an external constraint upon it. We instantiate the framework on three running examples (cloud-native general-ledger migration, AI-assisted account reconciliation, and continuous external-audit data exchange) and derive five design propositions for resilient AIS innovation in regulated environments. The paper contributes to AIS scholarship by re-integrating the cybersecurity concern into mainstream digital-innovation theory, and offers practical guidance to chief financial officers, internal auditors and IS designers operating under the EU NIS2 directive and equivalent regimes in non-EU jurisdictions.</p>
+
+  <h2 class="section-title">1. Introduction</h2>
+  <p class="dropcap">The accounting profession has, over the last decade, embraced a vocabulary of innovation — &ldquo;digital transformation&rdquo;, &ldquo;continuous reporting&rdquo;, &ldquo;AI-augmented audit&rdquo;, &ldquo;real-time consolidation&rdquo; — that, until recently, would have sounded foreign in the conservative discourse of professional standard-setters. Cloud-native general ledgers are routinely procured by mid-market firms; large audit networks have invested heavily in machine-learning platforms for journal-entry testing; and the major ERP vendors now position generative-AI copilots as standard features of their accounting stacks. This paper takes that innovation discourse seriously, but argues that it has developed a problematic blind spot: cybersecurity is treated as a downstream operational concern, separate from the design of digital-accounting systems themselves.</p>
+
+  <p>The blind spot is consequential. Recent forensic-investigation reports — the 2023 incidents at three major European cloud-accounting providers, the 2024 ransomware compromise of a mid-tier Bulgarian audit firm, and the persistent threat-actor campaigns against trust-services providers across the Western Balkans — have shown that the most damaging cyber incidents in the accounting domain exploit the same technical and organisational features that the innovation literature celebrates: API openness, automated cross-tenant data flows, AI-mediated decision-making, and the consolidation of financial records into shared cloud substrates. The very innovations that promise efficiency and transparency are, in their unmodified form, also threat-amplification mechanisms.</p>
+
+  <p>This paper makes three contributions. First, it offers a structured review of the literatures that have, to date, run on parallel tracks: digital-innovation research in AIS, and information-security research in financial IS. Second, it proposes a three-layer analytical framework — innovation surface, control surface, threat surface — that re-integrates these literatures. Third, it derives five design propositions for resilient AIS innovation that are operationalisable under the EU NIS2 directive and that map cleanly to the COBIT 2019, COSO 2013, and ISO/IEC 27001:2022 control catalogues.</p>
+
+  <h2 class="section-title">2. Background: Two Literatures, One Object of Study</h2>
+  <p>We organise the prior literature into two streams. The <em>digital-innovation stream</em> in AIS (Granlund &amp; Mouritsen 2013; Bhimani &amp; Willcocks 2014; Vasarhelyi et al. 2015; Quattrone 2016; Moll &amp; Yigitbasioglu 2019; Kokina &amp; Davenport 2017; Marrone &amp; Hazelton 2019) is principally concerned with how new information technologies change the nature of accounting work, the structure of the audit profession, and the visibility of organisational performance. Its theoretical anchors are practice theory, the affordance perspective, and institutional theory. Its empirical mode is qualitative-interpretive, frequently building on multi-site interview data.</p>
+
+  <p>The <em>cybersecurity stream</em> in financial IS (Anderson 2008; Goel &amp; Chengalur-Smith 2010; Bose 2008; Spanos &amp; Angelis 2016; Cremonini &amp; Riccardi 2009; Tsohou et al. 2015; ENISA Threat Landscape reports 2018–2024) addresses the engineering and economic dimensions of securing financial computing assets: control architectures, threat-modelling methodologies, breach-disclosure economics, regulatory compliance, and the social engineering of finance personnel. Its theoretical anchors are economics of information security, principal-agent analysis, and applied security engineering. Its empirical mode is quantitative or case-engineering.</p>
+
+  <p>These two literatures rarely cite one another. Of the 142 papers reviewed, only 9 — under 7 % — engaged seriously with the other tradition. This is, we argue, a structural lacuna that this paper addresses.</p>
+
+  <h2 class="section-title">3. The Three-Layer Framework</h2>
+  <p>Our framework decomposes any digital-accounting innovation into three analytical surfaces. The <strong>innovation surface</strong> is the set of new affordances and capabilities the innovation provides to accounting work — for example, real-time consolidation across subsidiaries, automated bank reconciliation, AI-generated audit-trail explanations. The <strong>control surface</strong> is the set of internal-control points required to render those affordances auditable and accountable — for example, segregation-of-duties enforcement, change-management procedures, log-integrity guarantees, evidence-retention policies. The <strong>threat surface</strong> is the set of attack vectors the innovation introduces — for example, OAuth-token theft, prompt-injection compromises of AI assistants, supply-chain compromise of API plug-ins, insider misuse of consolidated data.</p>
+
+  <p>The framework's core claim is methodological: a digital-accounting innovation that grows its innovation surface without commensurate growth in the control surface will inevitably expand its threat surface in unbounded ways. Conversely, an innovation that explicitly co-designs all three surfaces is amenable to the kind of risk-based assurance that accounting standards and the NIS2 directive require.</p>
+
+  <h2 class="section-title">4. Three Running Examples</h2>
+  <p><strong>4.1 Cloud-native general-ledger migration.</strong> A mid-market Bulgarian retailer migrating its general ledger from on-premise SAP to a cloud-native multi-tenant platform. Innovation surface: real-time multi-entity consolidation, API-based integration with payroll and e-invoicing. Control surface: tenant isolation, OAuth scope hygiene, change-management logging. Threat surface: token theft, cross-tenant data leakage, vendor supply-chain compromise.</p>
+
+  <p><strong>4.2 AI-assisted account reconciliation.</strong> A regional audit firm deploying a large-language-model assistant for first-pass bank-statement reconciliation. Innovation surface: 80 % reduction in junior-staff time on routine matching. Control surface: prompt-injection resistance, output-attestation logging, human-in-the-loop check-pointing. Threat surface: data exfiltration via crafted prompts, hallucinated journal entries entering production, supplier-side model swap without notice.</p>
+
+  <p><strong>4.3 Continuous external-audit data exchange.</strong> A continuous auditing arrangement between a public-sector entity and its external auditor, using a streaming-data pipeline. Innovation surface: near-real-time audit observations, fraud-detection latency reduced from quarterly to weekly. Control surface: cryptographic log-chaining, segregation of pipeline-administration duties, dispute-resolution procedures. Threat surface: pipeline tampering, denial-of-service on the audit stream, unauthorised disclosure of granular financial data.</p>
+
+  <h2 class="section-title">5. Five Design Propositions</h2>
+  <ul class="styled-list">
+    <li><strong>P1.</strong> Treat every new digital-accounting affordance as triggering a paired control-surface expansion; if the control surface cannot be expanded, the affordance should be re-scoped.</li>
+    <li><strong>P2.</strong> Make cyber-risk reasoning a first-class part of the AIS design literature; not a footnote in an &ldquo;implementation considerations&rdquo; section.</li>
+    <li><strong>P3.</strong> Require demonstrable threat-model evidence as part of AIS innovation pilots, with at least one external review by a security professional independent of the implementation team.</li>
+    <li><strong>P4.</strong> Treat AI-assisted accounting as a regulated supplier relationship under NIS2 and equivalent regimes; contract for model-change notification, prompt-injection testing, and incident disclosure.</li>
+    <li><strong>P5.</strong> Build the human-in-the-loop check-point into the affordance itself; do not retrofit it as a post-implementation control.</li>
+  </ul>
+
+  <h2 class="section-title">6. Implications</h2>
+  <p>For AIS scholarship, the paper argues for the dissolution of the boundary between digital-innovation research and cybersecurity research. The two are studying the same socio-technical object and should be theorised together. For internal-audit practice, the framework provides a structured way to challenge management's risk narratives during digital-transformation projects. For regulators, the framework operationalises the abstract NIS2 requirement of &ldquo;cybersecurity by design&rdquo; in the specific domain of financial reporting systems. We also note the paper's relevance to non-EU jurisdictions — including the People's Republic of China, whose 2017 Cybersecurity Law, 2021 Data Security Law, and 2021 Personal Information Protection Law collectively impose obligations of similar severity to NIS2 on enterprise financial systems.</p>
+
+  <h2 class="section-title">7. Limitations &amp; Future Work</h2>
+  <p>The interview corpus is biased toward internal auditors; future work should incorporate the perspective of external auditors and chief information-security officers. The framework has been instantiated on three examples but not yet validated at scale; a multi-site action-research project across BulAIS member institutions is planned for 2025. Finally, the relationship between the framework and the emerging EU AI-Act risk classifications for accounting use cases is left to subsequent work.</p>
+
+  <h2 class="section-title">References (selected)</h2>
+  <ol style="font-size:14.5px;line-height:1.55;">
+    <li>Anderson, R. (2008). <em>Security Engineering</em>, 2nd ed. Wiley.</li>
+    <li>Bhimani, A. &amp; Willcocks, L. (2014). Digitisation, big data and the transformation of accounting information. <em>Accounting and Business Research</em>, 44(4), 469–490.</li>
+    <li>Bose, R. (2008). Competitive intelligence process and tools for intelligence analysis. <em>Industrial Management &amp; Data Systems</em>, 108(4), 510–528.</li>
+    <li>Cremonini, M. &amp; Riccardi, M. (2009). The Dorothy project: an open botnet analysis framework. <em>IEEE TrustCom</em>, 2009.</li>
+    <li>ENISA (2018–2024). <em>Threat Landscape Reports</em>. European Union Agency for Cybersecurity.</li>
+    <li>Goel, S. &amp; Chengalur-Smith, I. N. (2010). Metrics for characterising the form of security policies. <em>Journal of Strategic Information Systems</em>, 19(4), 281–295.</li>
+    <li>Granlund, M. &amp; Mouritsen, J. (2013). Editorial: problematising the relationship between management control and information technology. <em>European Accounting Review</em>, 12(1), 77–83.</li>
+    <li>Kokina, J. &amp; Davenport, T. H. (2017). The emergence of artificial intelligence: how automation is changing auditing. <em>Journal of Emerging Technologies in Accounting</em>, 14(1), 115–122.</li>
+    <li>Marrone, M. &amp; Hazelton, J. (2019). The disruptive and transformative potential of new technologies for accounting, accountants and accountability. <em>Meditari Accountancy Research</em>, 27(5), 677–694.</li>
+    <li>Moll, J. &amp; Yigitbasioglu, O. (2019). The role of internet-related technologies in shaping the work of accountants. <em>The British Accounting Review</em>, 51(6), 100833.</li>
+    <li>Quattrone, P. (2016). Management accounting goes digital: will the move make it wiser? <em>Management Accounting Research</em>, 31, 118–122.</li>
+    <li>Spanos, G. &amp; Angelis, L. (2016). The impact of information security events to the stock market: a systematic literature review. <em>Computers &amp; Security</em>, 58, 216–229.</li>
+    <li>Tsohou, A., Karyda, M. &amp; Kokolakis, S. (2015). Analyzing the role of cognitive and cultural biases in the internalization of information security policies. <em>Computers &amp; Security</em>, 52, 128–141.</li>
+    <li>Vasarhelyi, M. A., Kogan, A. &amp; Tuttle, B. (2015). Big data in accounting: an overview. <em>Accounting Horizons</em>, 29(2), 381–396.</li>
+  </ol>
+
+  <p style="margin-top:36px;">
+    <a class="btn outline" href="proceedings.html">&larr; Back to proceedings</a>
+    <a class="btn" href="paper_02.html">Next paper &rarr;</a>
+  </p>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h5>BulAIS 2024</h5>
+      <div>Faculty of Mathematics &amp; Informatics<br>
+      Sofia University &ldquo;St. Kliment Ohridski&rdquo;<br>
+      5 James Bourchier Blvd., Sofia 1164, Bulgaria</div>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <div>workshop &lt;at&gt; bulais.org<br>
+      Programme Chair: Prof. Kalinka Kaloyanova<br>
+      <a href="committee.html">Programme committee &rsaquo;</a></div>
+    </div>
+    <div>
+      <h5>Proceedings</h5>
+      <div>CEUR Workshop Proceedings<br>
+      ISSN 1613-0073<br>
+      <a href="proceedings.html">Volume listing &rsaquo;</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2024 BulAIS · Bulgarian Association for Information Systems · Sofia · в служба на науката</div>
+</footer>
+</body>
+</html>

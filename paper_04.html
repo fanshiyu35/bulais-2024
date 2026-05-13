@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Threat-Modelling Framework for Croatian e-Citizen Services · BulAIS 2024</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="cyr-band"></div>
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="crest">БАИС</div>
+      <div>
+        <h1 class="site-title">BulAIS 2024 Workshop</h1>
+        <div class="site-subtitle">on Information Systems &amp; Digital Innovation</div>
+      </div>
+    </div>
+    <span class="location-tag">25–26 October 2024 · Sofia, Bulgaria</span>
+  </div>
+</header>
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="cfp.html">Call for Papers</a></li>
+    <li><a href="committee.html">Committee</a></li>
+    <li><a href="schedule.html">Programme</a></li>
+    <li><a href="venue.html">Venue</a></li>
+    <li><a href="proceedings.html" class="active">Proceedings</a></li>
+  </ul>
+</nav>
+
+<main>
+  <p style="font-family:'Old Standard TT',serif;text-transform:uppercase;letter-spacing:2px;font-size:12px;color:#9f813d;">Paper 4 of 6 · Session 2: Cybersecurity &amp; E-Government</p>
+  <h1 style="font-family:'Cormorant Garamond',serif;color:#4a1d23;font-size:32px;line-height:1.22;margin:6px 0 4px;">A Threat-Modelling Framework for Croatian e-Citizen Services Under the EUDIW Regulation</h1>
+  <p style="font-style:italic;color:#5a3a37;margin:0 0 22px;">Ivan Horvat, Mirjana Pejić Bach, Tomislav Hernaus · Faculty of Economics &amp; Business, Zagreb</p>
+
+  <dl class="paper-meta">
+    <dt>Authors</dt><dd>Ivan Horvat (corresponding) — ivan.horvat [at] efzg.unizg.hr · Mirjana Pejić Bach · Tomislav Hernaus</dd>
+    <dt>Affiliation</dt><dd>Faculty of Economics and Business, University of Zagreb, Croatia</dd>
+    <dt>Track</dt><dd>Full research paper, double-blind reviewed (3 reviewers)</dd>
+    <dt>Keywords</dt><dd>e-government · threat modelling · EUDIW · digital identity · STRIDE</dd>
+    <dt>Pages in volume</dt><dd>pp. 41–54</dd>
+  </dl>
+
+  <h2 class="section-title">Abstract</h2>
+  <p class="abstract">Croatia's e-Citizen portal will integrate with the pan-EU Digital Identity Wallet (EUDIW) by 2026 under Regulation (EU) 2024/1183. This paper develops a STRIDE-based threat-modelling framework specific to the e-Citizen / EUDIW integration, identifies 14 high-priority threats through expert validation with eight national security architects, and proposes corresponding mitigation patterns mapped to the EUDIW Architecture and Reference Framework v1.4. The framework generalises to other Member-State e-Government systems undertaking EUDIW integration and offers concrete recommendations to SDURDD on assurance-level configuration.</p>
+
+  
+  <h2 class="section-title">1. Introduction</h2>
+  <p class="dropcap">Croatia's e-Citizen platform (e-Građani) is one of the largest single-sign-on portals for public services in South-East Europe, serving more than 2.4 million unique citizens in 2023. The forthcoming pan-EU Digital Identity Wallet (EUDIW), mandated by Regulation (EU) 2024/1183, requires Member States to integrate national identity systems into a federated wallet architecture by 2026. This paper develops and applies a STRIDE-based threat-modelling framework specific to the e-Citizen / EUDIW integration.</p>
+
+  <h2 class="section-title">2. Background</h2>
+  <p>We synthesise (i) the public-administration literature on digital identity in the EU (Tsakalakis et al. 2021; Cuijpers &amp; Schroers 2014), (ii) the security-engineering literature on identity federation (Cameron 2005; Bertino &amp; Takahashi 2010), and (iii) the legal-informatics literature on eIDAS 2.0 (Schwerha 2024).</p>
+
+  <h2 class="section-title">3. Method</h2>
+  <p>We construct the threat model in three iterations: (i) baseline STRIDE applied to the legacy e-Citizen architecture, (ii) extended STRIDE-LM (linkability and machine-learning extensions) applied to the EUDIW-integrated architecture, (iii) expert validation with eight security architects from the Croatian information-society agency (SDURDD) and FINA.</p>
+
+  <h2 class="section-title">4. Threat Model</h2>
+  <p>We identify 47 candidate threats, of which 14 are judged high-priority. The five most consequential are: (T1) wallet-instance cloning, (T2) issuer-attestation downgrade, (T3) verifier-side correlation attacks, (T4) cross-border attribute over-disclosure under verifier coercion, and (T5) revocation-list timing attacks.</p>
+
+  <h2 class="section-title">5. Mitigations &amp; Recommendations</h2>
+  <p>For each high-priority threat, we propose a mitigation pattern, mapped to the EUDIW Architecture and Reference Framework v1.4. We recommend SDURDD adopt selective-disclosure assurance levels above the EUDIW minimum, particularly for sensitive health-record verifiers.</p>
+
+  <h2 class="section-title">6. Conclusion</h2>
+  <p>The framework is, by construction, applicable to other Member-State e-Government systems undertaking EUDIW integration. We close with future-work pointers toward formal-methods verification of the wallet-binding protocols.</p>
+
+  <h2 class="section-title">References (selected)</h2>
+  <ol style="font-size:14.5px;line-height:1.55;">
+    <li>Cameron, K. (2005). The laws of identity. Microsoft Identity White Paper.</li>
+    <li>Cuijpers, C. &amp; Schroers, J. (2014). eIDAS as guideline for the development of digital identity. <em>SSRN</em>.</li>
+    <li>European Parliament (2024). Regulation (EU) 2024/1183 amending eIDAS for EUDIW. <em>OJEU</em>, L series.</li>
+    <li>Pejić Bach, M. et al. (2022). Public-sector digital transformation in Croatia. <em>Government Information Quarterly</em>, 39(4), 101739.</li>
+    <li>Tsakalakis, N., O'Hara, K. &amp; Stalla-Bourdillon, S. (2021). Identity assurance in eIDAS. <em>Computer Law &amp; Security Review</em>, 41, 105541.</li>
+  </ol>
+
+
+  <p style="margin-top:36px;">
+    <a class="btn outline" href="paper_03.html">&larr; Previous</a>
+    <a class="btn" href="paper_05.html">Next &rarr;</a>
+    <a class="btn outline" href="proceedings.html">All papers</a>
+  </p>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h5>BulAIS 2024</h5>
+      <div>Faculty of Mathematics &amp; Informatics<br>
+      Sofia University &ldquo;St. Kliment Ohridski&rdquo;<br>
+      5 James Bourchier Blvd., Sofia 1164, Bulgaria</div>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <div>workshop &lt;at&gt; bulais.org<br>
+      Programme Chair: Prof. Kalinka Kaloyanova<br>
+      <a href="committee.html">Programme committee &rsaquo;</a></div>
+    </div>
+    <div>
+      <h5>Proceedings</h5>
+      <div>CEUR Workshop Proceedings<br>
+      ISSN 1613-0073<br>
+      <a href="proceedings.html">Volume listing &rsaquo;</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2024 BulAIS · Bulgarian Association for Information Systems · Sofia · в служба на науката</div>
+</footer>
+</body>
+</html>
